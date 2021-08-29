@@ -14,7 +14,6 @@ public class BookSharingPlatformApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookSharingPlatformApplication.class, args);
-		System.out.println("hy");
 
 	}
 

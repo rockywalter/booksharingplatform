@@ -3,6 +3,7 @@ package com.nibm.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +14,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.util.JSONWrappedObject;
 import com.nibm.model.User;
 import com.nibm.repository.UserService;
 import com.sun.mail.iap.Response;
+
+import netscape.javascript.JSObject;
 
 @RestController
 public class UserController {
@@ -41,14 +45,17 @@ public class UserController {
 	}
 
 	@PostMapping(path = "/user/verify")
-	public ResponseEntity<Object> userVerify(@RequestBody User user) {
+	public ResponseEntity<Object> userLoginVerify(@RequestBody User user) {
 
-		User return_user= userservice.userVerify(user);
-		if(return_user==null)
-		{
-			return new ResponseEntity<Object>("Login Fail!",HttpStatus.NOT_FOUND);
+		User return_user = userservice.userVerify(user);
+
+		if (return_user == null) {
+			JSONObject jobj = new JSONObject();
+			jobj.put("Authentication", "Fail");
+			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.NOT_FOUND);
+		} else {
+			return new ResponseEntity<Object>(return_user, HttpStatus.OK);
 		}
-		return new ResponseEntity<Object>(return_user,HttpStatus.OK);
 
 	}
 
@@ -57,6 +64,7 @@ public class UserController {
 		return userservice.resetPassword(email);
 
 	}
+
 	@GetMapping(path = "user/checkresetcode/{code}")
 	public String checkResetCode(@PathVariable String code) {
 		return userservice.resetPassword(code);

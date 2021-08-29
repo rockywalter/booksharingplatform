@@ -64,74 +64,66 @@ public class UserService {
 	}
 
 	public String resetPassword(String email) {
-	
-		if(userrepo.findByEmail(email) != null)
-		{
+
+		if (userrepo.findByEmail(email) != null) {
 			System.out.println("hit");
-			Properties properties = new  Properties();
+			Properties properties = new Properties();
 			properties.put("mail.smtp.auth", "true");
 			properties.put("mail.smtp.starttls.enable", "true");
 			properties.put("mail.smtp.host", "smtp.gmail.com");
 			properties.put("mail.smtp.port", "587");
-			
-			
-			String myEmail="vishwa.danan@gmail.com";
-			String myPassword="dananjaya123";
-			
-			Session session= Session.getInstance(properties, new Authenticator() {
-				
+
+			String myEmail = "vishwa.danan@gmail.com";
+			String myPassword = "dananjaya123";
+
+			Session session = Session.getInstance(properties, new Authenticator() {
+
 				@Override
 				protected PasswordAuthentication getPasswordAuthentication() {
-					
-					return new PasswordAuthentication(myEmail , myPassword);
+
+					return new PasswordAuthentication(myEmail, myPassword);
 				}
 			});
-			
-			Message message =prepareMessage(session,myEmail,email);
+
+			Message message = prepareMessage(session, myEmail, email);
 			try {
 				javax.mail.Transport.send(message);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			return "Please check your email and enter the the reset code";
-		
-		}
-		else
-		{
+
+		} else {
 			return "This email is not existing!";
 		}
-		
-		
-		
-		
+
 	}
 
 	private Message prepareMessage(Session session, String myEmail, String email) {
 		// TODO Auto-generated method stub
-		
-		Random rand=new Random();
-		randomcode=rand.nextInt(999999);
-		
+
+		Random rand = new Random();
+		randomcode = rand.nextInt(999999);
+
 		try {
-			Message message=new MimeMessage(session);
+			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(myEmail));
-			message.setRecipient(Message.RecipientType.TO,new InternetAddress(email));
+			message.setRecipient(Message.RecipientType.TO, new InternetAddress(email));
 			message.setSubject("Reset Your Password");
 			message.setText(String.valueOf(randomcode));
 			return message;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
-		return null; 
+		}
+		return null;
 	}
 
 	public String checkResetCode(String code) {
-		
-		if(code.equals(String.valueOf(randomcode)))
-		{
+
+		if (code.equals(String.valueOf(randomcode))) {
 			return "Verification done!";
 		}
 		return "Verification fail!";
