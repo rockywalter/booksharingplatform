@@ -63,37 +63,29 @@ public class UserController {
 	public ResponseEntity<Object> passwordReset(@RequestBody User user) {
 		String msg = userservice.resetPassword(user);
 		JSONObject jobj = new JSONObject();
-		if(!msg.equals("success"))
-		{
-			
+		if (!msg.equals("success")) {
+
 			jobj.put("authentication", "User not in system");
 			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.NOT_FOUND);
-		}
-		else
-		{
+		} else {
 			jobj.put("authentication", "Code is sent to the email");
 			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.OK);
-			
+
 		}
-		
 
 	}
 
 	@GetMapping(path = "user/checkresetcode/{code}")
 	public ResponseEntity<Object> checkResetCode(@PathVariable String code) {
 		JSONObject jobj = new JSONObject();
-		
-		if(userservice.checkResetCode(code).equals("success"))
-		{
+
+		if (userservice.checkResetCode(code).equals("success")) {
 			jobj.put("authentication", "success");
 			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.OK);
-		}
-		else
-		{
+		} else {
 			jobj.put("authentication", "denied");
 			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.NOT_FOUND);
 		}
-	
 
 	}
 
