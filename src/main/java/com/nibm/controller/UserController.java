@@ -32,9 +32,9 @@ public class UserController {
 		return userservice.findAll();
 	}
 
-	@GetMapping(path = "/user/{email}")
-	public User getUser(@PathVariable String email) {
-		return userservice.findByEmail(email);
+	@GetMapping(path = "/user")
+	public User getUser(@RequestBody User user) {
+		return userservice.findByEmail(user);
 	}
 
 	@PostMapping(path = "/user")
@@ -44,14 +44,14 @@ public class UserController {
 
 	}
 
-	@PostMapping(path = "/user/verify")
+	@GetMapping(path = "/user/verify")
 	public ResponseEntity<Object> userLoginVerify(@RequestBody User user) {
 
 		User return_user = userservice.userVerify(user);
 
 		if (return_user == null) {
 			JSONObject jobj = new JSONObject();
-			jobj.put("Authentication", "Fail");
+			jobj.put("authentication", "Fail");
 			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.NOT_FOUND);
 		} else {
 			return new ResponseEntity<Object>(return_user, HttpStatus.OK);
@@ -59,15 +59,41 @@ public class UserController {
 
 	}
 
-	@GetMapping(path = "user/frogetpassword/{email}")
-	public String passwordReset(@PathVariable String email) {
-		return userservice.resetPassword(email);
+	@PostMapping(path = "user/frogetpassword")
+	public ResponseEntity<Object> passwordReset(@RequestBody User user) {
+		String msg = userservice.resetPassword(user);
+		JSONObject jobj = new JSONObject();
+		if(!msg.equals("success"))
+		{
+			
+			jobj.put("authentication", "User not in system");
+			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.NOT_FOUND);
+		}
+		else
+		{
+			jobj.put("authentication", "Code is sent to the email");
+			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.OK);
+			
+		}
+		
 
 	}
 
 	@GetMapping(path = "user/checkresetcode/{code}")
-	public String checkResetCode(@PathVariable String code) {
-		return userservice.resetPassword(code);
+	public ResponseEntity<Object> checkResetCode(@PathVariable String code) {
+		JSONObject jobj = new JSONObject();
+		
+		if(userservice.checkResetCode(code).equals("success"))
+		{
+			jobj.put("authentication", "success");
+			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.OK);
+		}
+		else
+		{
+			jobj.put("authentication", "denied");
+			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.NOT_FOUND);
+		}
+	
 
 	}
 

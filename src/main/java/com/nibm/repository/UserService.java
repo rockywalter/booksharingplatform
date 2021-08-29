@@ -54,18 +54,18 @@ public class UserService {
 
 	}
 
-	public User findByEmail(String email) {
+	public User findByEmail(User user) {
 
-		if (userrepo.findByEmail(email) != null) {
-			return userrepo.findByEmail(email);
+		if (userrepo.findByEmail(user.getEmail()) != null) {
+			return userrepo.findByEmail(user.getEmail());
 		}
 
 		return new User();
 	}
 
-	public String resetPassword(String email) {
+	public String resetPassword(User user) {
 
-		if (userrepo.findByEmail(email) != null) {
+		if (userrepo.findByEmail(user.getEmail()) != null) {
 			System.out.println("hit");
 			Properties properties = new Properties();
 			properties.put("mail.smtp.auth", "true");
@@ -85,7 +85,7 @@ public class UserService {
 				}
 			});
 
-			Message message = prepareMessage(session, myEmail, email);
+			Message message = prepareMessage(session, myEmail, user.getEmail());
 			try {
 				javax.mail.Transport.send(message);
 			} catch (Exception e) {
@@ -93,7 +93,7 @@ public class UserService {
 				e.printStackTrace();
 			}
 
-			return "Please check your email and enter the the reset code";
+			return "success";
 
 		} else {
 			return "This email is not existing!";
@@ -124,7 +124,7 @@ public class UserService {
 	public String checkResetCode(String code) {
 
 		if (code.equals(String.valueOf(randomcode))) {
-			return "Verification done!";
+			return "success";
 		}
 		return "Verification fail!";
 	}
