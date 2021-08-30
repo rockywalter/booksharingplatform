@@ -6,22 +6,25 @@ import javax.persistence.Id;
 
 @Entity
 public class Category {
-@Id
-@GeneratedValue
-int CategoryID;
-String categoryName;
-public int getCategoryID() {
-	return CategoryID;
-}
-public void setCategoryID(int categoryID) {
-	CategoryID = categoryID;
-}
-public String getCategoryName() {
-	return categoryName;
-}
-public void setCategoryName(String categoryName) {
-	this.categoryName = categoryName;
-}
+	@Id
+	@GeneratedValue
+	int CategoryID;
+	String categoryName;
 
+	public int getCategoryID() {
+		return CategoryID;
+	}
+
+	public void setCategoryID(int categoryID) {
+		CategoryID = categoryID;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
 
 }
