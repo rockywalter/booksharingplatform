@@ -11,7 +11,7 @@ import com.nibm.model.User;
 @Repository
 public interface Listing_bookRepo extends JpaRepository<Listing_book, Integer> {
 
-	List<Listing_book> findByLocationid(int id);
+	List<Listing_book> findByDistrict(String id);
 
 	List<Listing_book> findByCategoryid(int categoryid);
 

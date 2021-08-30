@@ -22,23 +22,40 @@ public class Listing_book {
 	double Price;
 	int User_id;
 	int categoryid;
-	int locationid;
+	String province;
+	String district;
+	String city;
 
-	
+	public String getProvince() {
+		return province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	public String getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(String district) {
+		this.district = district;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
 	public int getCategoryid() {
 		return categoryid;
 	}
 
 	public void setCategoryid(int categoryid) {
 		this.categoryid = categoryid;
-	}
-
-	public int getLocationid() {
-		return locationid;
-	}
-
-	public void setLocationid(int locationid) {
-		this.locationid = locationid;
 	}
 
 	public int getListing_book_id() {
@@ -136,6 +153,5 @@ public class Listing_book {
 	public void setUser_id(int user_id) {
 		User_id = user_id;
 	}
-
 
 }

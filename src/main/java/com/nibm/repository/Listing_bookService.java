@@ -40,7 +40,7 @@ public class Listing_bookService {
 
 	public List<Listing_book> findByLocation(Listing_book book) {
 
-		return bookRepo.findByLocationid(book.getLocationid());
+		return bookRepo.findByDistrict(book.getDistrict());
 
 	}
 

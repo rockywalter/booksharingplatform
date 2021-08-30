@@ -9,7 +9,6 @@ public class Location {
 	@Id
 	@GeneratedValue
 	int Location_id;
-	String Country;
 	String Province;
 	String District;
 	String City;
@@ -20,14 +19,6 @@ public class Location {
 
 	public void setLocation_id(int location_id) {
 		Location_id = location_id;
-	}
-
-	public String getCountry() {
-		return Country;
-	}
-
-	public void setCountry(String country) {
-		Country = country;
 	}
 
 	public String getProvince() {
