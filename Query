@@ -1,0 +1,87 @@
+Category insert query
+
+INSERT INTO `bookshareplatform`.`category`
+(`categoryid`,
+`category_name`)
+VALUES
+(1,
+'IOT Reports');
+
+--------------------------------------------------------------
+
+Complain insert query
+
+INSERT INTO `bookshareplatform`.`complain`
+(`complain_id`,
+`comment`,
+`complain_category`,
+`user_id`)
+VALUES
+(1,'bad user behaviour','bad user',1);
+
+--------------------------------------------------------------
+Listing_book insert query
+
+INSERT INTO `bookshareplatform`.`listing_book`
+(`listing_book_id`,
+`author`,
+`book_name`,
+`description`,
+`e_book_file`,
+`isbn`,
+`image`,
+`listing_type`,
+`price`,
+`published_year`,
+`quantity`,
+`user_id`,
+`categoryid`,
+`locationid`)
+VALUES
+(1,'kamal','oru ganaga dige','novel for teenages','no','IS098','no','share',950,'2011',1,1,1,1);
+
+--------------------------------------------------------------
+
+location insert query
+
+INSERT INTO `bookshareplatform`.`location`
+(`location_id`,
+`city`,
+`country`,
+`district`,
+`province`)
+VALUES
+(1,'colombo','sri lanka','colombo','western');
+
+--------------------------------------------------------------
+requested_book insert query
+
+INSERT INTO `bookshareplatform`.`requested_book`
+(`requestedid`,
+`isbn`,
+`author`,
+`name`,
+`userid`)
+VALUES
+(1,'cn321','clerck','gps for sl',1);
+
+--------------------------------------------------------------
+
+review insert query
+
+INSERT INTO `bookshareplatform`.`review`
+(`reviewid`,
+`comment`,
+`listing_bookid`,
+`review_type`,
+`userid`)
+VALUES
+(1,'good book',1,'best shareman',1);
+
+--------------------------------------------------------------
+
+INSERT INTO `bookshareplatform`.`sub_category`
+(`categoryid`,
+`sub_category`)
+VALUES
+(1,'reports');
