@@ -1,9 +1,13 @@
 package com.nibm.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Complain {
+@Id
+@GeneratedValue
 int Complain_id;
 String Complain_category;
 String Comment;
