@@ -9,7 +9,7 @@ public class Listing_book {
 
 	@Id
 	@GeneratedValue
-	String Listing_book_id;
+	int Listing_book_id;
 	String ISBN;
 	String Book_name;
 	String Description;
@@ -23,11 +23,11 @@ public class Listing_book {
 	String User_id;
 	String Category_id;
 
-	public String getListing_book_id() {
+	public int getListing_book_id() {
 		return Listing_book_id;
 	}
 
-	public void setListing_book_id(String listing_book_id) {
+	public void setListing_book_id(int listing_book_id) {
 		Listing_book_id = listing_book_id;
 	}
 
