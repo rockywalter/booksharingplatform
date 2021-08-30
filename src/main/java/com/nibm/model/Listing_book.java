@@ -20,8 +20,26 @@ public class Listing_book {
 	String E_book_file;
 	int Quantity;
 	double Price;
-	String User_id;
-	String Category_id;
+	int User_id;
+	int categoryid;
+	int locationid;
+
+	
+	public int getCategoryid() {
+		return categoryid;
+	}
+
+	public void setCategoryid(int categoryid) {
+		this.categoryid = categoryid;
+	}
+
+	public int getLocationid() {
+		return locationid;
+	}
+
+	public void setLocationid(int locationid) {
+		this.locationid = locationid;
+	}
 
 	public int getListing_book_id() {
 		return Listing_book_id;
@@ -111,20 +129,13 @@ public class Listing_book {
 		Price = price;
 	}
 
-	public String getUser_id() {
+	public int getUser_id() {
 		return User_id;
 	}
 
-	public void setUser_id(String user_id) {
+	public void setUser_id(int user_id) {
 		User_id = user_id;
 	}
 
-	public String getCategory_id() {
-		return Category_id;
-	}
-
-	public void setCategory_id(String category_id) {
-		Category_id = category_id;
-	}
 
 }
