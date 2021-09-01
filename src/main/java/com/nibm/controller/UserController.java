@@ -44,7 +44,7 @@ public class UserController {
 
 	}
 
-	@GetMapping(path = "/user/verify")
+	@PostMapping(path = "/user/verify")
 	public ResponseEntity<Object> userLoginVerify(@RequestBody User user) {
 
 		User return_user = userservice.userVerify(user);

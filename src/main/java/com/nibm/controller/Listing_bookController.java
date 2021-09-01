@@ -1,9 +1,13 @@
 package com.nibm.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,9 +24,11 @@ public class Listing_bookController {
 	@Autowired
 	Listing_bookService bookService;
 
-	@GetMapping("/books")
-	public List<Listing_book> getAllBooks() {
-		return bookService.findAllBooks();
+	@PostMapping("/booklist")
+	public ResponseEntity<Object> getAllBooks() {
+		Map<String, List<Listing_book>> listingbook = new HashMap<>();
+		listingbook.put("booklist", bookService.findAllBooks());
+		return new ResponseEntity<Object>(listingbook, HttpStatus.OK);
 
 	}
 
