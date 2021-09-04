@@ -26,7 +26,20 @@ public class Listing_bookService {
 
 		for (Listing_book book : bookads) {
 
+			if (book.getE_book_file() != null) {
+				byte[] pdfdecodedBytes = null;
+				try {
+					pdfdecodedBytes = FileUtils.readFileToByteArray(new File(book.getE_book_file()));
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				String encodedString = Base64.getEncoder().encodeToString(pdfdecodedBytes);
+				book.setE_book_file(encodedString);
+			}
+
 			byte[] fileContent = null;
+
 			try {
 				fileContent = FileUtils.readFileToByteArray(new File(book.getImage()));
 			} catch (IOException e) {
@@ -44,11 +57,24 @@ public class Listing_bookService {
 
 	public void saveorUpdate(Listing_book book) {
 
-		String encodeimage = book.getImage();
+		if (book.getE_book_file() != null) {
+			byte[] pdfdecodedBytes = Base64.getDecoder().decode(book.getE_book_file());
+			try {
+				FileUtils.writeByteArrayToFile(
+						new File("ebooks/" + String.valueOf(book.getListing_book_id()) + "_ebook.pdf"),
+						pdfdecodedBytes);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			book.setE_book_file("ebooks/" + String.valueOf(book.getListing_book_id()) + "_ebook.pdf");
+		}
 
-		byte[] decodedBytes = Base64.getDecoder().decode(encodeimage);
+		byte[] decodedBytes = Base64.getDecoder().decode(book.getImage());
+
 		try {
-			FileUtils.writeByteArrayToFile(new File("bookimages/" + String.valueOf(book.getListing_book_id()) + "_image.png"), decodedBytes);
+			FileUtils.writeByteArrayToFile(
+					new File("bookimages/" + String.valueOf(book.getListing_book_id()) + "_image.png"), decodedBytes);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -71,13 +97,74 @@ public class Listing_bookService {
 
 	public List<Listing_book> findByLocation(Listing_book book) {
 
-		return bookRepo.findByDistrict(book.getDistrict());
+		List<Listing_book> bookads=bookRepo.findByDistrict(book.getDistrict());
+		
+		for (Listing_book book1 : bookads) {
+
+			if (book1.getE_book_file() != null) {
+				byte[] pdfdecodedBytes = null;
+				try {
+					pdfdecodedBytes = FileUtils.readFileToByteArray(new File(book1.getE_book_file()));
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				String encodedString = Base64.getEncoder().encodeToString(pdfdecodedBytes);
+				book1.setE_book_file(encodedString);
+			}
+
+			byte[] fileContent = null;
+
+			try {
+				fileContent = FileUtils.readFileToByteArray(new File(book1.getImage()));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String encodedString = Base64.getEncoder().encodeToString(fileContent);
+
+			book1.setImage(encodedString);
+
+		}
+
+		return bookads;
 
 	}
 
 	public List<Listing_book> findBycategory(Listing_book book) {
 
-		return bookRepo.findByCategoryid(book.getCategoryid());
+		//return bookRepo.findByCategoryid(book.getCategoryid());
+		List<Listing_book> bookads=bookRepo.findByCategoryid(book.getCategoryid());
+		
+		for (Listing_book book1 : bookads) {
+
+			if (book1.getE_book_file() != null) {
+				byte[] pdfdecodedBytes = null;
+				try {
+					pdfdecodedBytes = FileUtils.readFileToByteArray(new File(book1.getE_book_file()));
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				String encodedString = Base64.getEncoder().encodeToString(pdfdecodedBytes);
+				book1.setE_book_file(encodedString);
+			}
+
+			byte[] fileContent = null;
+
+			try {
+				fileContent = FileUtils.readFileToByteArray(new File(book1.getImage()));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String encodedString = Base64.getEncoder().encodeToString(fileContent);
+
+			book1.setImage(encodedString);
+
+		}
+
+		return bookads;
 	}
 
 	public void deleteBook(Listing_book book) {

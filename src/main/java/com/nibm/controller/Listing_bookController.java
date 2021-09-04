@@ -56,16 +56,23 @@ public class Listing_bookController {
 
 	}
 
-	@GetMapping("/bookslocation")
-	public List<Listing_book> findByLocation(@RequestBody Listing_book book) {
-		return bookService.findByLocation(book);
+	@PostMapping("/bookslocation")
+	public ResponseEntity<Object> findByLocation(@RequestBody Listing_book book) {
+		//return bookService.findByLocation(book);
+		
+		Map<String, List<Listing_book>> listingbook = new HashMap<>();
+		listingbook.put("booklist", bookService.findByLocation(book));
+		return new ResponseEntity<Object>(listingbook, HttpStatus.OK);
 
 	}
 
-	@GetMapping("/bookscategory")
-	public List<Listing_book> findBycategory(@RequestBody Listing_book book) {
-		return bookService.findBycategory(book);
+	@PostMapping("/bookscategory")
+	public ResponseEntity<Object> findBycategory(@RequestBody Listing_book book) {
+		//return bookService.findBycategory(book);
 
+		Map<String, List<Listing_book>> listingbook = new HashMap<>();
+		listingbook.put("booklist", bookService.findBycategory(book));
+		return new ResponseEntity<Object>(listingbook, HttpStatus.OK);
 	}
 
 }
