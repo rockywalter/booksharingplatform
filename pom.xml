@@ -10,12 +10,12 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nibm</groupId>
-	<artifactId>BookSharingPlatform</artifactId>
+	<artifactId>HuwamaruwaBookSharingPlatform</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BookSharingPlatform</name>
-	<description>Demo project for Spring Boot</description>
+	<name>HuwamaruwaBookSharingPlatform</name>
+	<description>The Book Sharing Platform</description>
 	<properties>
-		<java.version>16</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
