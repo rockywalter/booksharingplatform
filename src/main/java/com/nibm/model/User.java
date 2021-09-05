@@ -11,11 +11,20 @@ public class User {
 	@GeneratedValue
 	int user_id;
 	String email;
+	String name;
 	String password;
 	String tp;
 	double user_rate;
 	String payment_email;
 	String resetcode;
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public String getResetcode() {
 		return resetcode;
