@@ -17,6 +17,9 @@ import com.nibm.model.User;
 @Service
 public class Listing_bookService {
 
+	private static int x=0;
+
+	
 	@Autowired
 	Listing_bookRepo bookRepo;
 
@@ -61,18 +64,20 @@ public class Listing_bookService {
 	}
 
 	public void saveorUpdate(Listing_book book) {
-
+		
+   int y=x++;
+		
 		if (book.getE_book_file() != null) {
 			byte[] pdfdecodedBytes = Base64.getDecoder().decode(book.getE_book_file());
 			try {
 				FileUtils.writeByteArrayToFile(
-						new File("ebooks/" + String.valueOf(book.getListing_book_id()) + "_ebook.pdf"),
+						new File("ebooks/" + String.valueOf(y) + "_ebook.pdf"),
 						pdfdecodedBytes);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			book.setE_book_file("ebooks/" + String.valueOf(book.getListing_book_id()) + "_ebook.pdf");
+			book.setE_book_file("ebooks/" + String.valueOf(y) + "_ebook.pdf");
 		}
 
 		if (book.getImage() != null) {
@@ -81,12 +86,12 @@ public class Listing_bookService {
 
 			try {
 				FileUtils.writeByteArrayToFile(
-						new File("bookimages/" + String.valueOf(book.getListing_book_id()) + "_image.png"), decodedBytes);
+						new File("bookimages/" + String.valueOf(y) + "_image.png"), decodedBytes);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			book.setImage("bookimages/" + String.valueOf(book.getListing_book_id()) + "_image.png");
+			book.setImage("bookimages/" + String.valueOf(y) + "_image.png");
 		}
 
 		bookRepo.save(book);
