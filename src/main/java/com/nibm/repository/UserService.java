@@ -23,6 +23,7 @@ import com.sun.jdi.connect.Transport;
 @Service
 public class UserService {
 	int randomcode;
+	User newuser;
 
 	@Autowired
 	UserRepo userrepo;
@@ -66,6 +67,8 @@ public class UserService {
 	public String resetPassword(User user) {
 
 		if (userrepo.findByEmail(user.getEmail()) != null) {
+			
+			newuser=  userrepo.findByEmail(user.getEmail());
 			System.out.println("hit");
 			Properties properties = new Properties();
 			properties.put("mail.smtp.auth", "true");
@@ -121,11 +124,17 @@ public class UserService {
 		return null;
 	}
 
-	public String checkResetCode(String code) {
+	public String checkResetCode(User user) {
 
-		if (code.equals(String.valueOf(randomcode))) {
+		String code=user.getResetcode();
+		
+		if(code.equals(String.valueOf(randomcode)))
+		{
+			newuser.setPassword(user.getPassword());
+			userrepo.save(newuser);
 			return "success";
 		}
+		
 		return "Verification fail!";
 	}
 

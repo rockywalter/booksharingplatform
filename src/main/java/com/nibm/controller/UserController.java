@@ -41,7 +41,7 @@ public class UserController {
 	public void addUser(@RequestBody User user) {
 
 		userservice.addOrUpdateUser(user);
-
+		
 	}
 
 	@PostMapping(path = "/user/verify")
@@ -75,11 +75,11 @@ public class UserController {
 
 	}
 
-	@GetMapping(path = "user/checkresetcode/{code}")
-	public ResponseEntity<Object> checkResetCode(@PathVariable String code) {
+	@PostMapping(path = "user/checkresetcode")
+	public ResponseEntity<Object> checkResetCode(@RequestBody User user) {
 		JSONObject jobj = new JSONObject();
 
-		if (userservice.checkResetCode(code).equals("success")) {
+		if (userservice.checkResetCode(user).equals("success")) {
 			jobj.put("authentication", "success");
 			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.OK);
 		} else {

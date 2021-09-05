@@ -15,6 +15,15 @@ public class User {
 	String tp;
 	double user_rate;
 	String payment_email;
+	String resetcode;
+
+	public String getResetcode() {
+		return resetcode;
+	}
+
+	public void setResetcode(String resetcode) {
+		this.resetcode = resetcode;
+	}
 
 	public int getUser_id() {
 		return user_id;
