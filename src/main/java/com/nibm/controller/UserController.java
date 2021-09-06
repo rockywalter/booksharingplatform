@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.util.JSONWrappedObject;
 import com.nibm.model.User;
@@ -88,5 +90,47 @@ public class UserController {
 		}
 
 	}
+	
+	@RequestMapping("/")
+	public ModelAndView home()
+	{
+		ModelAndView mv =new ModelAndView();
+		mv.setViewName("login");
+	
+		return mv;
+		
+	}
+	
+	@RequestMapping("login")
+	public ModelAndView login(String username,String password)
+	{
+		ModelAndView mv =new ModelAndView();
+		if(username.equals("admin")&&password.equals("123") )
+		{
+			
+			mv.setViewName("dashbord");
+			return mv;
+		}
+		else
+		{
+			mv.setViewName("login");
+			mv.addObject("error","Invalid username or password");	
+			return mv;
+		}
+		
+	
+		
+	}
+	
+	@RequestMapping("webusers")
+	public ModelAndView allusers()
+	{
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("userlist",userservice.findAll());	
+		mv.setViewName("user");
+		return mv;
+		
+	}
+	
 
 }
