@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html>
 <%@include file="head.jsp" %>
@@ -20,9 +19,11 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">USERS</h1>
+          <h1 class="h3 mb-4 text-gray-800">Book Adds</h1>
 
  <!-- Begin Here to write-->
+
+<p>  hello world icne ceciuhco ceocheocnle cei         </p>
 
 
 <div class="container">
@@ -39,11 +40,20 @@
             <th scope="col">TP</th>
             <th scope="col">Rate</th>
             <th scope="col">Payment Email</th>
+            <th scope="col">Payment Email</th>
+              <th scope="col">Payment Email</th>
+                <th scope="col">Payment Email</th>
+                  <th scope="col">Payment Email</th>
+                    <th scope="col">Payment Email</th>
+                      <th scope="col">Payment Email</th>
+                        <th scope="col">Payment Email</th>
+                          <th scope="col">Payment Email</th>
+                            <th scope="col">Payment Email</th>
           </tr>
         </thead>
         <tbody>
         
-        <c:forEach var="user" items="${userlist}">
+        <c:forEach var="book" items="${booklist}">
          <tr>
             <th scope="row">${user.user_id}</th>
             <td>${user.name}</td>
@@ -71,6 +81,8 @@
     </div>
   </div>
 </div>
+
+
 
 
         </div>

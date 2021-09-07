@@ -19,7 +19,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">DASHBORD</h1>
+          <h1 class="h3 mb-4 text-gray-800">CATEGORIES</h1>
 
  <!-- Begin Here to write-->
 

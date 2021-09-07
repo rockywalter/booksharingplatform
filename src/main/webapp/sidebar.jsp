@@ -32,7 +32,7 @@
 
        <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="bookadd">
+        <a class="nav-link" href="booksadd">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Book Add</span></a>
       </li>
@@ -42,7 +42,7 @@
 
        <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="categories">
+        <a class="nav-link" href="webcategories">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Categories</span></a>
       </li>
@@ -52,7 +52,7 @@
 
        <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="complains">
+        <a class="nav-link" href="webcomplains">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Complains</span></a>
       </li>
