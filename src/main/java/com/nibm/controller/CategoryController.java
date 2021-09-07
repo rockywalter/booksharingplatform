@@ -52,7 +52,7 @@ public class CategoryController {
 	public ModelAndView webcategories()
 	{
 		ModelAndView mv =new ModelAndView();
-		//mv.addObject("userlist",userservice.findAll());	
+		mv.addObject("categorylist",catservice.findAll());	
 		mv.setViewName("categories");
 		return mv;
 		

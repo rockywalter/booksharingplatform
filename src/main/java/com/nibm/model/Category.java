@@ -8,23 +8,21 @@ import javax.persistence.Id;
 public class Category {
 	@Id
 	@GeneratedValue
-	int CategoryID;
+	int categoryID;
 	String categoryName;
-
 	public int getCategoryID() {
-		return CategoryID;
+		return categoryID;
 	}
-
 	public void setCategoryID(int categoryID) {
-		CategoryID = categoryID;
+		this.categoryID = categoryID;
 	}
-
 	public String getCategoryName() {
 		return categoryName;
 	}
-
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
+
+
 
 }
