@@ -41,14 +41,14 @@
             <th scope="col">Rate</th>
             <th scope="col">Payment Email</th>
             <th scope="col">Payment Email</th>
-              <th scope="col">Payment Email</th>
-                <th scope="col">Payment Email</th>
-                  <th scope="col">Payment Email</th>
-                    <th scope="col">Payment Email</th>
-                      <th scope="col">Payment Email</th>
-                        <th scope="col">Payment Email</th>
-                          <th scope="col">Payment Email</th>
-                            <th scope="col">Payment Email</th>
+            <th scope="col">Payment Email</th>
+            <th scope="col">Payment Email</th>
+            <th scope="col">Payment Email</th>
+            <th scope="col">Payment Email</th>
+            <th scope="col">Payment Email</th>
+            <th scope="col">Payment Email</th>
+            <th scope="col">Payment Email</th>
+            <th scope="col">Payment Email</th>
           </tr>
         </thead>
         <tbody>
