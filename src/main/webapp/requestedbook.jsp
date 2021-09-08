@@ -19,7 +19,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">COMPLAINS</h1>
+          <h1 class="h3 mb-4 text-gray-800">Requested Books</h1>
           
 
  <!-- Begin Here to write-->
@@ -35,10 +35,10 @@
         
      <tr>
       
-            <th scope="col">Complain ID</th>
-            <th scope="col">Complain Category</th>
-            <th scope="col">Comment</th>
-            <th scope="col">User ID</th>
+            <th scope="col">Requested ID</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Author</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -75,29 +75,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-        </div>
-        <!-- /.container-fluid -->
-           
-      </div>
-      <!-- End of Main Content -->
-      
-       <%@include file="footer.jsp" %>
-    </div>
-    <!-- End of Content Wrapper -->
-  
-  </div>
-  <!-- End of Page Wrapper -->
-  
-   <%@include file="end.jsp" %>
-</body>
-</html>

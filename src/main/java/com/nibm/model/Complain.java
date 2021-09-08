@@ -9,41 +9,35 @@ public class Complain {
 
 	@Id
 	@GeneratedValue
-	int Complain_id;
-	String Complain_category;
-	String Comment;
-	int User_id;
-
+	int complain_id;
+	String complain_category;
+	String comment;
+	int user_id;
 	public int getComplain_id() {
-		return Complain_id;
+		return complain_id;
 	}
-
 	public void setComplain_id(int complain_id) {
-		Complain_id = complain_id;
+		this.complain_id = complain_id;
 	}
-
 	public String getComplain_category() {
-		return Complain_category;
+		return complain_category;
 	}
-
 	public void setComplain_category(String complain_category) {
-		Complain_category = complain_category;
+		this.complain_category = complain_category;
 	}
-
 	public String getComment() {
-		return Comment;
+		return comment;
 	}
-
 	public void setComment(String comment) {
-		Comment = comment;
+		this.comment = comment;
 	}
-
 	public int getUser_id() {
-		return User_id;
+		return user_id;
+	}
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
-	public void setUser_id(int user_id) {
-		User_id = user_id;
-	}
+	
 
 }

@@ -23,7 +23,7 @@
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="webusers">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fa fa-user-circle" aria-hidden="true""></i>
           <span>Users</span></a>
       </li>
 
@@ -33,7 +33,7 @@
        <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="booksadd">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fa fa-book" aria-hidden="true"></i>
           <span>Book Add</span></a>
       </li>
 
@@ -43,7 +43,7 @@
        <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="webcategories">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fa fa-bars" aria-hidden="true"></i>
           <span>Categories</span></a>
       </li>
 
@@ -53,8 +53,32 @@
        <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="webcomplains">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fa fa-comments" aria-hidden="true"></i>
           <span>Complains</span></a>
+      </li>
+      
+         <!-- Divider -->
+         
+          <!-- Divider -->
+      <hr class="sidebar-divider">
+
+       <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="webcomplains">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <span>Requested Books</span></a>
+      </li>
+      
+         <!-- Divider -->
+         
+            <!-- Divider -->
+      <hr class="sidebar-divider">
+
+       <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="webcomplains">
+          <i class="fa fa-trophy" aria-hidden="true"></i>
+          <span>Top Rated Users</span></a>
       </li>
       
          <!-- Divider -->
