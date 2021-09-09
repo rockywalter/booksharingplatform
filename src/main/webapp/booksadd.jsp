@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+    
 <!DOCTYPE html>
 <html>
 <%@include file="head.jsp" %>
@@ -32,46 +34,48 @@
       <table class="table table-bordered">
         <thead>
         
-     <tr>
+        <tr>
+ 
+
+ 
+ 
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Password</th>
-            <th scope="col">TP</th>
-            <th scope="col">Rate</th>
-            <th scope="col">Payment Email</th>
-            <th scope="col">Payment Email</th>
-            <th scope="col">Payment Email</th>
-            <th scope="col">Payment Email</th>
-            <th scope="col">Payment Email</th>
-            <th scope="col">Payment Email</th>
-            <th scope="col">Payment Email</th>
-            <th scope="col">Payment Email</th>
-            <th scope="col">Payment Email</th>
-            <th scope="col">Payment Email</th>
+            <th scope="col">Book_name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Listing_type</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">District</th>
+            <th scope="col">Category_id</th>
+            <th scope="col">User_id</th>
+
           </tr>
         </thead>
         <tbody>
         
         <c:forEach var="book" items="${booklist}">
          <tr>
-            <th scope="row">${user.user_id}</th>
-            <td>${user.name}</td>
-            <td>${user.email}</td>
-            <td>${user.password}</td>
-            <td>${user.tp}</td>
-            <td>${user.user_rate}</td>
-            <td>${user.payment_email}</td>
-            <td>
-           
-              <button onclick="location.href='/updateaddbookform.jsp'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
+            <th scope="row">${book.listing_book_id}</th>
+            <td>${book.book_name}</td>
+            <td>${book.price}</td>
+            <td>${book.listing_type}</td>
+            <td>${book.quantity}</td>
+            <td>${book.district}</td>
+            <td>${book.categoryid}</td>
+            <td>${book.user_id}</td>
    
-            <button onclick="location.href='/deletehall?id=${hall.id}'" class="btn btn-danger" type="button"><i class="far fa-trash-alt"></i> </button>
-       
+            <td>
+            
+      
+           
+
+              <button onclick="location.href='/updateaddbookform?id=${book.listing_book_id}'" class="btn btn-success"><i class="fas fa-edit"></i></button>
+
+
+
             </td>
           </tr>
      
-        </c:forEach>
+       </c:forEach> 
         
         
         
@@ -81,9 +85,6 @@
     </div>
   </div>
 </div>
-
-
-
 
         </div>
         <!-- /.container-fluid -->

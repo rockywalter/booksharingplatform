@@ -81,12 +81,23 @@ public class Listing_bookController {
 	public ModelAndView booksadd()
 	{
 		ModelAndView mv =new ModelAndView();
-		mv.addObject("booklist",bookService.findAllBooks());	
+		mv.addObject("booklist",bookService.findAllBooksForWeb());	
 		mv.setViewName("booksadd");
 		return mv;
 		
 	}
 	
+	@RequestMapping("/updateaddbookform")
+	public ModelAndView getBooksForWeb(int id)
+	{
+	
+		
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("booklist",bookService.findBookByIdWeb(id));	
+		mv.setViewName("updateaddbookform");
+		return mv;
+		
+	}
 	
 
 }

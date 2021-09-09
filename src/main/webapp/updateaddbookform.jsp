@@ -16,10 +16,13 @@
 	<title></title>
 </head>
 <body>
+
+
+
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class=" mt-5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF2psCzfbB611rnUhxgMi-lc2oB78ykqDGYb4v83xQ1pAbhPiB&usqp=CAU"><span class="font-weight-bold">Amelly</span><span class="text-black-50">amelly12@bbb.com</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class=" mt-5" src="${booklist.get().image}"><span class="font-weight-bold">Amelly</span><span class="text-black-50">amelly12@bbb.com</span><span> </span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
@@ -27,18 +30,18 @@
                     <h4 class="text-right">Book Post Details</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">ID</label><input type="text" class="form-control" placeholder="ID" value=""></div>
-                    <div class="col-md-6"><label class="labels">Book Name</label><input type="text" class="form-control" value="" placeholder="Enter Book Name"></div>
+                    <div class="col-md-6"><label class="labels">ID</label><input type="text" class="form-control" placeholder="ID" value="${booklist.get().listing_book_id}"></div>
+                    <div class="col-md-6"><label class="labels">Book Name</label><input type="text" class="form-control" value="${booklist.get().book_name}" placeholder="Enter Book Name"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Author</label><input type="text" class="form-control" placeholder="Enter name of Author" value=""></div>
-                    <div class="col-md-12"><label class="labels">ISBN</label><input type="text" class="form-control" placeholder="Enter ISBN" value=""></div>
-                    <div class="col-md-12"><label class="labels">Quantity</label><input type="text" class="form-control" placeholder="Enter Quantity" value=""></div>
-                    <div class="col-md-12"><label class="labels">Listing Type</label><input type="text" class="form-control" placeholder="EnterListing Type" value=""></div>
+                    <div class="col-md-12"><label class="labels">Author</label><input type="text" class="form-control" placeholder="Enter name of Author" value="${booklist.get().author}"></div>
+                    <div class="col-md-12"><label class="labels">ISBN</label><input type="text" class="form-control" placeholder="Enter ISBN" value="${booklist.get().isbn}"></div>
+                    <div class="col-md-12"><label class="labels">Quantity</label><input type="text" class="form-control" placeholder="Enter Quantity" value="${booklist.get().quantity}"></div>
+                    <div class="col-md-12"><label class="labels">Listing Type</label><input type="text" class="form-control" placeholder="EnterListing Type" value="${booklist.get().listing_type}"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Ebook</label><input type="text" class="form-control" placeholder="Ebook or Not a Ebook" value=""></div>
-                    <div class="col-md-6"><label class="labels">Price</label><input type="text" class="form-control" value="" placeholder="Enter Price"></div>
+                    <div class="col-md-6"><label class="labels">Ebook</label><input type="text" class="form-control" placeholder="Ebook or Not a Ebook" value="${booklist.get().e_book_file}"></div>
+                    <div class="col-md-6"><label class="labels">Price</label><input type="text" class="form-control" value="${booklist.get().price}" placeholder="Enter Price"></div>
                 </div>
                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Book Details</button></div>
             </div>
@@ -46,10 +49,10 @@
         <div class="col-md-4">
             <div class="p-3 py-5">
                
-                <div class="col-md-12"><label class="labels">Category</label><input type="text" class="form-control" placeholder="EnterCategory" value=""></div> <br>
-                <div class="col-md-12"><label class="labels">District</label><input type="text" class="form-control" placeholder="Enter District" value=""></div>
-                <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control" placeholder="Enter City" value=""></div>
-                 <div class="col-md-12"><label class="labels">Phone No</label><input type="text" class="form-control" placeholder="Enter Phone No" value=""></div>
+                <div class="col-md-12"><label class="labels">Category</label><input type="text" class="form-control" placeholder="EnterCategory" value="${booklist.get().categoryid}"></div> <br>
+                <div class="col-md-12"><label class="labels">District</label><input type="text" class="form-control" placeholder="Enter District" value="${booklist.get().district}"></div>
+                <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control" placeholder="Enter City" value="${booklist.get().city}"></div>
+                 <div class="col-md-12"><label class="labels">Phone No</label><input type="text" class="form-control" placeholder="Enter Phone No" value="${booklist.get().image}"></div>
             </div>
         </div>
     </div>

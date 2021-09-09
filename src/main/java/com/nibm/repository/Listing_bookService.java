@@ -187,4 +187,15 @@ public class Listing_bookService {
 
 	}
 
+	public List<Listing_book> findAllBooksForWeb() {
+		
+		return bookRepo.findAll();
+	
+	}
+
+	public Optional<Listing_book> findBookByIdWeb(int id) {
+		
+		return bookRepo.findById(id);
+	}
+
 }
