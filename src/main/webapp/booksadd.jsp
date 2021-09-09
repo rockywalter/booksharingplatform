@@ -64,7 +64,7 @@
             <td>${user.payment_email}</td>
             <td>
            
-              <button onclick="location.href='/hallupdateform?id=${hall.id}'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
+              <button onclick="location.href='/updateaddbookform.jsp'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
    
             <button onclick="location.href='/deletehall?id=${hall.id}'" class="btn btn-danger" type="button"><i class="far fa-trash-alt"></i> </button>
        

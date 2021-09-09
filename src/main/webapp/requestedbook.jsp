@@ -44,7 +44,7 @@
         </thead>
         <tbody>
         
-        <c:forEach var="complain" items="${complainlist}">
+        <c:forEach var="requestBook" items="${complainlist}">
          <tr>
             <th scope="row">${complain.complain_id}</th>
             <td>${complain.complain_category}</td>

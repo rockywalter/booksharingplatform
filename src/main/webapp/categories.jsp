@@ -48,7 +48,7 @@
    
             <td>
             
-             <button onclick="location.href='/updateform.jsp'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
+             <button onclick="location.href='/updatecategoryform.jsp'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
            
 
    
