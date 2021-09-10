@@ -17,12 +17,10 @@
 </head>
 <body>
 
-
-
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class=" mt-5" src="${booklist.get().image}"><span class="font-weight-bold">Amelly</span><span class="text-black-50">amelly12@bbb.com</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class=" mt-5" src="/${booklist.get().image}" width="200px"><span class="font-weight-bold">Amelly</span><span class="text-black-50">amelly12@bbb.com</span><span> </span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
@@ -52,7 +50,7 @@
                 <div class="col-md-12"><label class="labels">Category</label><input type="text" class="form-control" placeholder="EnterCategory" value="${booklist.get().categoryid}"></div> <br>
                 <div class="col-md-12"><label class="labels">District</label><input type="text" class="form-control" placeholder="Enter District" value="${booklist.get().district}"></div>
                 <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control" placeholder="Enter City" value="${booklist.get().city}"></div>
-                 <div class="col-md-12"><label class="labels">Phone No</label><input type="text" class="form-control" placeholder="Enter Phone No" value="${booklist.get().image}"></div>
+                 <div class="col-md-12"><label class="labels">Phone No</label><input type="text" class="form-control" placeholder="Enter Phone No" value="${booklist.get().tp}"></div>
             </div>
         </div>
     </div>

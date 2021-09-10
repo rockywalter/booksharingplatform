@@ -25,6 +25,13 @@ public class Listing_book {
 	String province;
 	String district;
 	String city;
+	String tp;
+	public String getTp() {
+		return tp;
+	}
+	public void setTp(String tp) {
+		this.tp = tp;
+	}
 	public int getListing_book_id() {
 		return listing_book_id;
 	}
