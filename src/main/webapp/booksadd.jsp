@@ -70,6 +70,7 @@
 
               <button onclick="location.href='/updateaddbookform?id=${book.listing_book_id}'" class="btn btn-success"><i class="fas fa-edit"></i></button>
 
+ <button onclick="location.href='/deletebookweb?id=${book.listing_book_id}'" class="btn btn-danger" type="button"><i class="far fa-trash-alt"></i> </button>
 
 
             </td>

@@ -15,7 +15,7 @@ public class User {
 	String password;
 	String tp;
 	double user_rate;
-	String payment_email;
+	String topratedstatus;
 	String resetcode;
 	
 	public String getName() {
@@ -74,12 +74,13 @@ public class User {
 		this.user_rate = user_rate;
 	}
 
-	public String getPayment_email() {
-		return payment_email;
+	public String getTopratedstatus() {
+		return topratedstatus;
 	}
 
-	public void setPayment_email(String payment_email) {
-		this.payment_email = payment_email;
+	public void setTopratedstatus(String topratedstatus) {
+		this.topratedstatus = topratedstatus;
 	}
+
 
 }

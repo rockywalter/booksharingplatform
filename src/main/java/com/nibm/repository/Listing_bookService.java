@@ -198,4 +198,17 @@ public class Listing_bookService {
 		return bookRepo.findById(id);
 	}
 
+	public void deletebookweb(int id) {
+		
+		bookRepo.deleteById(id);
+	
+		
+	}
+
+	public void updateforweb(Listing_book book) {
+		
+		bookRepo.save(book);
+		
+	}
+
 }

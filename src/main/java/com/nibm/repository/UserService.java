@@ -138,4 +138,20 @@ public class UserService {
 		return "Verification fail!";
 	}
 
+	public void deleteuser(int id) {
+		userrepo.deleteById(id);
+		
+	}
+
+	public void updateuserweb(User user) {
+	
+		userrepo.save(user);
+		
+	}
+
+	public Optional<User> findById(int id) {
+		
+		return userrepo.findById(id);
+	}
+
 }

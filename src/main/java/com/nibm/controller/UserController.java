@@ -132,6 +132,56 @@ public class UserController {
 		
 	}
 	
-
+	@RequestMapping("deleteuserweb")
+	public ModelAndView deleteuser(int id)
+	{
+		ModelAndView mv =new ModelAndView();
+		userservice.deleteuser(id);	
+		mv.addObject("userlist",userservice.findAll());	
+		mv.setViewName("user");
+		return mv;
+		
+	}
+	
+	@RequestMapping("updateuserweb")
+	public ModelAndView deleteuser(User user)
+	{
+		ModelAndView mv =new ModelAndView();
+		userservice.updateuserweb(user);
+		mv.addObject("userlist",userservice.findAll());	
+		mv.setViewName("user");
+		return mv;
+		
+	}
+	
+	@RequestMapping("updateuserform")
+	public ModelAndView updateuserform(int id)
+	{
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("userlist",userservice.findById(id));	
+		mv.setViewName("updateuserform");
+		return mv;
+		
+	}
+	
+	@RequestMapping("toprate")
+	public ModelAndView toprate(int id)
+	{
+		User user=new User();
+		Optional<User> u1 = userservice.findById(id);
+		user.setEmail(u1.get().getEmail());
+		user.setName(u1.get().getName());
+		user.setPassword(u1.get().getPassword());
+		user.setTp(u1.get().getTp());
+		user.setUser_rate(u1.get().getUser_rate());
+		user.setUser_id(id);
+		user.setTopratedstatus("yes");
+		ModelAndView mv =new ModelAndView();
+		userservice.updateuserweb(user);
+		mv.addObject("userlist",userservice.findAll());	
+		mv.setViewName("user");
+		return mv;
+		
+	}
 
 }

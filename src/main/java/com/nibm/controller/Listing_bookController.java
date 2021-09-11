@@ -99,5 +99,27 @@ public class Listing_bookController {
 		
 	}
 	
+	@RequestMapping("/deletebookweb")
+	public ModelAndView deletebookweb(int id)
+	{
+	
+		bookService.deletebookweb(id);
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("booklist",bookService.findAllBooksForWeb());	
+		mv.setViewName("booksadd");
+		return mv;
+		
+	}
+	
+	@RequestMapping("/updatebookweb")
+	public ModelAndView updatebookweb(Listing_book book)
+	{
+		bookService.updateforweb(book);
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("booklist",bookService.findAllBooksForWeb());	
+		mv.setViewName("booksadd");
+		return mv;
+		
+	}
 
 }

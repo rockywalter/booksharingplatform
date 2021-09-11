@@ -22,7 +22,6 @@ public class Listing_book {
 	double price;
 	int user_id;
 	int categoryid;
-	String province;
 	String district;
 	String city;
 	String tp;
@@ -109,12 +108,6 @@ public class Listing_book {
 	}
 	public void setCategoryid(int categoryid) {
 		this.categoryid = categoryid;
-	}
-	public String getProvince() {
-		return province;
-	}
-	public void setProvince(String province) {
-		this.province = province;
 	}
 	public String getDistrict() {
 		return district;
