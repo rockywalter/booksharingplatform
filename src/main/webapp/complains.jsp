@@ -50,9 +50,10 @@
             <th scope="row">${complain.complain_id}</th>
             <td>${complain.complain_category}</td>
             <td>${complain.comment}</td>
-            <td>${complain.user_id}</td>
+            <td>${complain.user_id}</td> 
             <td>
            
+            <button onclick="location.href='/deleteuserweb?id=${complain.user_id}'" formaction="/login" class="btn btn-danger"><i class="fas fa-ban"></i></button>
               <button onclick="location.href='/updatecomplainform?id=${complain.complain_id}'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
    
             <button onclick="location.href='/deletecomplain?id=${complain.complain_id}'" class="btn btn-danger" type="button"><i class="far fa-trash-alt"></i> </button>
