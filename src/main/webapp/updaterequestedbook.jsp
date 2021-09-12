@@ -18,21 +18,23 @@
 <body>
 <div class="container rounded bg-white mt-5 mb-5">
   
+       <form action="updatereqbookweb">
        
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Requested Book Details</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels"> Requested ID</label><input type="text" class="form-control" placeholder="Requested ID" value=""></div>
-                    <div class="col-md-6"><label class="labels">ISBN</label><input type="text" class="form-control" value="" placeholder="ISBN"></div>
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" value="" placeholder="Book Name"></div>
-                    <div class="col-md-6"><label class="labels">Author</label><input type="text" class="form-control" value="" placeholder="Author Name"></div>
-                    <div class="col-md-6"><label class="labels">User ID</label><input type="text" class="form-control" value="" placeholder="User ID"></div>
+                    <div class="col-md-6"><label class="labels"> Requested ID</label><input name="requestedID" type="text" class="form-control" placeholder="Requested ID" value="${reqbooklist.get().requestedID}"></div>
+                    <div class="col-md-6"><label class="labels">ISBN</label><input name="isbn" type="text" class="form-control" value="${reqbooklist.get().isbn}" placeholder="ISBN"></div>
+                    <div class="col-md-6"><label class="labels">Name</label><input name="name" type="text" class="form-control" value="${reqbooklist.get().name}" placeholder="Book Name"></div>
+                    <div class="col-md-6"><label class="labels">Author</label><input name="author" type="text" class="form-control" value="${reqbooklist.get().author}" placeholder="Author Name"></div>
+                    <div class="col-md-6"><label class="labels">User ID</label><input name="userID" type="text" class="form-control" value="${reqbooklist.get().userID}" placeholder="User ID"></div>
                 </div>
                
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Requested Book Details Details</button></div>
+                <div class="mt-5 text-center"><input type="submit" class="btn btn-primary profile-button" value="Save Requested Book Details Details"></div>
             </div>
+            </form>
     
 </div>
 </div>

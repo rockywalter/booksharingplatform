@@ -114,6 +114,7 @@ public class Listing_bookController {
 	@RequestMapping("/updatebookweb")
 	public ModelAndView updatebookweb(Listing_book book)
 	{
+		
 		bookService.updateforweb(book);
 		ModelAndView mv =new ModelAndView();
 		mv.addObject("booklist",bookService.findAllBooksForWeb());	

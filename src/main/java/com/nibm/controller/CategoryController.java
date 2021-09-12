@@ -58,4 +58,37 @@ public class CategoryController {
 		
 	}
 	
+	@RequestMapping("deletecatweb")
+	public ModelAndView deletecatweb(int id)
+	{
+		catservice.deletecatweb(id);
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("categorylist",catservice.findAll());	
+		mv.setViewName("categories");
+		return mv;
+		
+	}
+	
+	@RequestMapping("updatecatweb")
+	public ModelAndView updatecatweb(Category cat1)
+	{
+		catservice.addOrUpdateCategory(cat1);
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("categorylist",catservice.findAll());	
+		mv.setViewName("categories");
+		return mv;
+		
+	}
+	
+	@RequestMapping("updatecatform")
+	public ModelAndView updatecatform(int id)
+	{
+		
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("categorylist",catservice.getcategoryweb(id));	
+		mv.setViewName("updatecategoryform");
+		return mv;
+		
+	}
+	
 }

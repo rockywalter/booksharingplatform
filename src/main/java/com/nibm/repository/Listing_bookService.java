@@ -207,6 +207,10 @@ public class Listing_bookService {
 
 	public void updateforweb(Listing_book book) {
 		
+		Optional<Listing_book> book1 = bookRepo.findById(book.getListing_book_id());
+		
+		book.setUser_id(book1.get().getUser_id());
+		
 		bookRepo.save(book);
 		
 	}

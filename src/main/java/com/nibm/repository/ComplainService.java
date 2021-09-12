@@ -1,6 +1,7 @@
 package com.nibm.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,11 @@ public class ComplainService {
 		
 		complainrepo.deleteById(id);
 		
+	}
+
+	public Optional<Complain> getComplain(int id) {
+		
+		return complainrepo.findById(id);
 	}
 
 	

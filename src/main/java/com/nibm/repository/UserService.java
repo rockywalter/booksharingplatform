@@ -33,9 +33,9 @@ public class UserService {
 		return userlist;
 	}
 
-	public void addOrUpdateUser(User user) {
+	public User addOrUpdateUser(User user) {
 
-		userrepo.save(user);
+		return userrepo.save(user);
 
 	}
 

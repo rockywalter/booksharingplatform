@@ -47,7 +47,40 @@ public class ComplainController {
 	public ModelAndView webcomplains()
 	{
 		ModelAndView mv =new ModelAndView();
-		//mv.addObject("userlist",userservice.findAll());	
+		mv.addObject("complainlist",complainservice.findAll());	
+		mv.setViewName("complains");
+		return mv;
+		
+	}
+	
+	
+	@RequestMapping("deletecomplain")
+	public ModelAndView deletecomplain(int id)
+	{
+		complainservice.deleteComplain(id);
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("complainlist",complainservice.findAll());	
+		mv.setViewName("complains");
+		return mv;
+		
+	}
+	
+	@RequestMapping("updatecomplainform")
+	public ModelAndView updatecomplainform(int id)
+	{
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("complainlist",complainservice.getComplain(id));	
+		mv.setViewName("updatecomplainform");
+		return mv;
+		
+	}
+	
+	@RequestMapping("updatecomplainweb")
+	public ModelAndView updatecomplainweb(Complain complain)
+	{
+		complainservice.addOrUpdateComplain(complain);
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("complainlist",complainservice.findAll());	
 		mv.setViewName("complains");
 		return mv;
 		

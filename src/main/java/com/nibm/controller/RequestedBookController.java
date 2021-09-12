@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.nibm.model.Listing_book;
 import com.nibm.model.RequestedBook;
@@ -41,6 +43,47 @@ public class RequestedBookController {
 		reqbookservice.deleteReqBook(reqbook);
 	}
 	
+	@RequestMapping("webreqbooks")
+	public ModelAndView webreqbooks()
+	{
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("reqbooklist",reqbookservice.getAllReqBooks());	
+		mv.setViewName("requestedbook");
+		return mv;
+		
+	}
 	
+	@RequestMapping("deletereqbook")
+	public ModelAndView deletereqbook(int id)
+	{
+		reqbookservice.deletereqbookid(id);
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("reqbooklist",reqbookservice.getAllReqBooks());	
+		mv.setViewName("requestedbook");
+		return mv;
+		
+	}
+	
+	@RequestMapping("updatereqbookform")
+	public ModelAndView hallupdateform(int id)
+	{
+		
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("reqbooklist",reqbookservice.getReqBook(id));	
+		mv.setViewName("updaterequestedbook");
+		return mv;
+		
+	}
+	
+	@RequestMapping("updatereqbookweb")
+	public ModelAndView updatereqbookweb(RequestedBook reqbook)
+	{
+		reqbookservice.addReqBook(reqbook);
+		ModelAndView mv =new ModelAndView();
+		mv.addObject("reqbooklist",reqbookservice.getAllReqBooks());	
+		mv.setViewName("requestedbook");
+		return mv;
+		
+	}
 
 }

@@ -19,18 +19,19 @@
 <div class="container rounded bg-white mt-5 mb-5">
   
        
+       <form action="updatecatweb">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Category Details</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels"> ID</label><input type="text" class="form-control" placeholder="Category ID" value=""></div>
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" value="" placeholder="Category Name"></div>
+                    <div class="col-md-6"><label class="labels"> ID</label><input name="categoryID" type="text" class="form-control" placeholder="Category ID" value="${categorylist.get().categoryID}"></div>
+                    <div class="col-md-6"><label class="labels">Name</label><input name="categoryName" type="text" class="form-control" value="${categorylist.get().categoryName}" placeholder="Category Name"></div>
                 </div>
                
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Category Details</button></div>
+                <div class="mt-5 text-center"><input type="submit" vlaue="Save Category Details" class="btn btn-primary profile-button" ></div>
             </div>
-    
+    </form>
 </div>
 </div>
 </div>

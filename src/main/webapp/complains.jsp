@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html>
 <%@include file="head.jsp" %>
@@ -52,9 +53,9 @@
             <td>${complain.user_id}</td>
             <td>
            
-              <button onclick="location.href='/hallupdateform?id=${hall.id}'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
+              <button onclick="location.href='/updatecomplainform?id=${complain.complain_id}'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
    
-            <button onclick="location.href='/deletehall?id=${hall.id}'" class="btn btn-danger" type="button"><i class="far fa-trash-alt"></i> </button>
+            <button onclick="location.href='/deletecomplain?id=${complain.complain_id}'" class="btn btn-danger" type="button"><i class="far fa-trash-alt"></i> </button>
        
             </td>
           </tr>

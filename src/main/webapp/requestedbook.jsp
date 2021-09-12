@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html>
 <%@include file="head.jsp" %>
@@ -39,22 +40,24 @@
             <th scope="col">Book Name</th>
             <th scope="col">ISBN</th>
             <th scope="col">Author</th>
+            <th scope="col">UserID</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
         
-        <c:forEach var="requestBook" items="${complainlist}">
+        <c:forEach var="requestBook" items="${reqbooklist}">
          <tr>
-            <th scope="row">${complain.complain_id}</th>
-            <td>${complain.complain_category}</td>
-            <td>${complain.comment}</td>
-            <td>${complain.user_id}</td>
+            <th scope="row">${requestBook.requestedID}</th>
+            <td>${requestBook.name}</td>
+            <td>${requestBook.isbn}</td>
+            <td>${requestBook.author}</td>
+            <td>${requestBook.userID}</td>
             <td>
            
-              <button onclick="location.href='/hallupdateform?id=${hall.id}'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
+              <button onclick="location.href='/updatereqbookform?id=${requestBook.requestedID}'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
    
-            <button onclick="location.href='/deletehall?id=${hall.id}'" class="btn btn-danger" type="button"><i class="far fa-trash-alt"></i> </button>
+            <button onclick="location.href='/deletereqbook?id=${requestBook.requestedID}'" class="btn btn-danger" type="button"><i class="far fa-trash-alt"></i> </button>
        
             </td>
           </tr>

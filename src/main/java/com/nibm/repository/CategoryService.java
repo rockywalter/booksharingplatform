@@ -33,4 +33,14 @@ public class CategoryService {
 
 	}
 
+	public void deletecatweb(int id) {
+		
+		catrepo.deleteById(id);
+	}
+
+	public Optional<Category> getcategoryweb(int id) {
+		// TODO Auto-generated method stub
+		return catrepo.findById(id);
+	}
+
 }

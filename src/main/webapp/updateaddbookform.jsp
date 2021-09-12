@@ -50,7 +50,8 @@
         </div>
         <div class="col-md-4">
             <div class="p-3 py-5">
-                <div class="col-md-12"><label class="labels">Publish Year</label><input name="published_year" type="text" class="form-control" placeholder="EnterYear" value="${booklist.get().published_year}"></div>
+                <div class="col-md-12"><label class="labels">Publish Year</label><input name="published_year" type="text" class="form-control" placeholder="EnterYear" value="${booklist.get().published_year}"></div><br>
+                <div class="col-md-12"> <textarea name="description" rows="4" cols="37">${booklist.get().description} </textarea></div>
                 <div class="col-md-12"><label class="labels">Category</label><input name="categoryid" type="text" class="form-control" placeholder="EnterCategory" value="${booklist.get().categoryid}"></div>  <br>
                 <div class="col-md-12"><label class="labels">District</label><input name="district" type="text" class="form-control" placeholder="Enter District" value="${booklist.get().district}"></div>
                 <div class="col-md-12"><label class="labels">City</label><input name="city" type="text" class="form-control" placeholder="Enter City" value="${booklist.get().city}"></div>

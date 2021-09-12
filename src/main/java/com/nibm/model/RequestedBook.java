@@ -9,7 +9,7 @@ public class RequestedBook {
 @Id
 @GeneratedValue
 int requestedID;
-String ISBN;
+String isbn;
 String name;
 String author;
 int userID;
@@ -19,11 +19,18 @@ public int getRequested_id() {
 public void setRequested_id(int requested_id) {
 	this.requestedID = requested_id;
 }
-public String getISBN() {
-	return ISBN;
+
+public int getRequestedID() {
+	return requestedID;
 }
-public void setISBN(String iSBN) {
-	ISBN = iSBN;
+public void setRequestedID(int requestedID) {
+	this.requestedID = requestedID;
+}
+public String getIsbn() {
+	return isbn;
+}
+public void setIsbn(String isbn) {
+	this.isbn = isbn;
 }
 public String getName() {
 	return name;

@@ -40,9 +40,9 @@ public class UserController {
 	}
 
 	@PostMapping(path = "/user")
-	public void addUser(@RequestBody User user) {
+	public User addUser(@RequestBody User user) {
 
-		userservice.addOrUpdateUser(user);
+		return userservice.addOrUpdateUser(user);
 		
 	}
 

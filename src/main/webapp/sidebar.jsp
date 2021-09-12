@@ -64,22 +64,16 @@
 
        <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="requestedbook">
+        <a class="nav-link" href="webreqbooks">
           <i class="fa fa-envelope" aria-hidden="true"></i>
           <span>Requested Books</span></a>
       </li>
       
          <!-- Divider -->
          
-            <!-- Divider -->
-      <hr class="sidebar-divider">
+   
 
-       <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="webcomplains">
-          <i class="fa fa-trophy" aria-hidden="true"></i>
-          <span>Top Rated Users</span></a>
-      </li>
+
       
          <!-- Divider -->
      

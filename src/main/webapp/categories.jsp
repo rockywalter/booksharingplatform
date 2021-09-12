@@ -48,11 +48,11 @@
    
             <td>
             
-             <button onclick="location.href='/updatecategoryform.jsp'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
+             <button onclick="location.href='/updatecatform?id=${category.categoryID}'" formaction="/login" class="btn btn-success"><i class="fas fa-edit"></i></button>
            
 
    
-            <button onclick="location.href='/deletehall?id=${hall.id}'" class="btn btn-danger" type="button"><i class="far fa-trash-alt"></i> </button>
+            <button onclick="location.href='/deletecatweb?id=${category.categoryID}'" class="btn btn-danger" type="button"><i class="far fa-trash-alt"></i> </button>
        
             </td>
           </tr>
