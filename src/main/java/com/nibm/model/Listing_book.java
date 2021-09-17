@@ -19,7 +19,7 @@ public class Listing_book {
 	String published_year;
 	String e_book_file;
 	int quantity;
-	double price;
+	int price;
 	int user_id;
 	int categoryid;
 	String district;
@@ -91,10 +91,10 @@ public class Listing_book {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public double getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	public int getUser_id() {
