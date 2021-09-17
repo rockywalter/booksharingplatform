@@ -52,7 +52,7 @@ public class Listing_bookController {
 
 	}
 
-	@GetMapping("/book")
+	@PostMapping("/getbook")
 	public Optional<Listing_book> findById(@RequestBody Listing_book book) {
 		return bookService.findById(book);
 
