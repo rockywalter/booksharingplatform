@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.util.JSONWrappedObject;
+import com.nibm.model.Complain;
 import com.nibm.model.User;
+import com.nibm.repository.ComplainService;
 import com.nibm.repository.UserService;
 import com.sun.mail.iap.Response;
 
@@ -28,6 +30,8 @@ public class UserController {
 
 	@Autowired
 	UserService userservice;
+	@Autowired
+	ComplainService complainservice;
 
 	@GetMapping(path = "/users")
 	public List<User> getUsers() {
@@ -107,7 +111,8 @@ public class UserController {
 		ModelAndView mv =new ModelAndView();
 		if(username.equals("admin")&&password.equals("123") )
 		{
-			
+			List<Complain> complain=complainservice.findAll();
+			mv.addObject("complaincount",complain.size());
 			mv.setViewName("dashbord");
 			return mv;
 		}
