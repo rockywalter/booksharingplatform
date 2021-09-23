@@ -67,8 +67,8 @@ public class UserService {
 	public String resetPassword(User user) {
 
 		if (userrepo.findByEmail(user.getEmail()) != null) {
-			
-			newuser=  userrepo.findByEmail(user.getEmail());
+
+			newuser = userrepo.findByEmail(user.getEmail());
 			System.out.println("hit");
 			Properties properties = new Properties();
 			properties.put("mail.smtp.auth", "true");
@@ -126,32 +126,36 @@ public class UserService {
 
 	public String checkResetCode(User user) {
 
-		String code=user.getResetcode();
-		
-		if(code.equals(String.valueOf(randomcode)))
-		{
+		String code = user.getResetcode();
+
+		if (code.equals(String.valueOf(randomcode))) {
 			newuser.setPassword(user.getPassword());
 			userrepo.save(newuser);
 			return "success";
 		}
-		
+
 		return "Verification fail!";
 	}
 
 	public void deleteuser(int id) {
 		userrepo.deleteById(id);
-		
+
 	}
 
 	public void updateuserweb(User user) {
-	
+
 		userrepo.save(user);
-		
+
 	}
 
 	public Optional<User> findById(int id) {
-		
+
 		return userrepo.findById(id);
+	}
+
+	public Optional<User> getuserById(User user) {
+
+		return findById(user.getUser_id());
 	}
 
 }

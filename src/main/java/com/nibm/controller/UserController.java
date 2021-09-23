@@ -47,7 +47,14 @@ public class UserController {
 	public User addUser(@RequestBody User user) {
 
 		return userservice.addOrUpdateUser(user);
-		
+
+	}
+
+	@PostMapping(path = "/getuser")
+	public Optional<User> getUserById(@RequestBody User user) {
+
+		return userservice.getuserById(user);
+
 	}
 
 	@PostMapping(path = "/user/verify")
@@ -94,85 +101,73 @@ public class UserController {
 		}
 
 	}
-	
+
 	@RequestMapping("/")
-	public ModelAndView home()
-	{
-		ModelAndView mv =new ModelAndView();
+	public ModelAndView home() {
+		ModelAndView mv = new ModelAndView();
 		mv.setViewName("login");
-	
+
 		return mv;
-		
+
 	}
-	
+
 	@RequestMapping("login")
-	public ModelAndView login(String username,String password)
-	{
-		ModelAndView mv =new ModelAndView();
-		if(username.equals("admin")&&password.equals("123") )
-		{
-			List<Complain> complain=complainservice.findAll();
-			mv.addObject("complaincount",complain.size());
+	public ModelAndView login(String username, String password) {
+		ModelAndView mv = new ModelAndView();
+		if (username.equals("admin") && password.equals("123")) {
+			List<Complain> complain = complainservice.findAll();
+			mv.addObject("complaincount", complain.size());
 			mv.setViewName("dashbord");
 			return mv;
-		}
-		else
-		{
+		} else {
 			mv.setViewName("login");
-			mv.addObject("error","Invalid username or password");	
+			mv.addObject("error", "Invalid username or password");
 			return mv;
 		}
-		
-	
-		
+
 	}
-	
+
 	@RequestMapping("webusers")
-	public ModelAndView allusers()
-	{
-		ModelAndView mv =new ModelAndView();
-		mv.addObject("userlist",userservice.findAll());	
+	public ModelAndView allusers() {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("userlist", userservice.findAll());
 		mv.setViewName("user");
 		return mv;
-		
+
 	}
-	
+
 	@RequestMapping("deleteuserweb")
-	public ModelAndView deleteuser(int id)
-	{
-		ModelAndView mv =new ModelAndView();
-		userservice.deleteuser(id);	
-		mv.addObject("userlist",userservice.findAll());	
+	public ModelAndView deleteuser(int id) {
+		ModelAndView mv = new ModelAndView();
+		userservice.deleteuser(id);
+		mv.addObject("userlist", userservice.findAll());
 		mv.setViewName("user");
 		return mv;
-		
+
 	}
-	
+
 	@RequestMapping("updateuserweb")
-	public ModelAndView deleteuser(User user)
-	{
-		ModelAndView mv =new ModelAndView();
+	public ModelAndView deleteuser(User user) {
+		ModelAndView mv = new ModelAndView();
 		userservice.updateuserweb(user);
-		mv.addObject("userlist",userservice.findAll());	
+		mv.addObject("userlist", userservice.findAll());
 		mv.setViewName("user");
 		return mv;
-		
+
 	}
-	
+
 	@RequestMapping("updateuserform")
-	public ModelAndView updateuserform(int id)
-	{
-		ModelAndView mv =new ModelAndView();
-		mv.addObject("userlist",userservice.findById(id));	
+	public ModelAndView updateuserform(int id) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("userlist", userservice.findById(id));
 		mv.setViewName("updateuserform");
 		return mv;
-		
+
 	}
-	
+
 	@RequestMapping("toprate")
-	public ModelAndView toprate(int id)
-	{
-		User user=new User();
+	public ModelAndView toprate(int id) {
+		User user = new User();
 		Optional<User> u1 = userservice.findById(id);
 		user.setEmail(u1.get().getEmail());
 		user.setName(u1.get().getName());
@@ -181,12 +176,12 @@ public class UserController {
 		user.setUser_rate(u1.get().getUser_rate());
 		user.setUser_id(id);
 		user.setTopratedstatus("yes");
-		ModelAndView mv =new ModelAndView();
+		ModelAndView mv = new ModelAndView();
 		userservice.updateuserweb(user);
-		mv.addObject("userlist",userservice.findAll());	
+		mv.addObject("userlist", userservice.findAll());
 		mv.setViewName("user");
 		return mv;
-		
+
 	}
 
 }
