@@ -13,13 +13,6 @@ String isbn;
 String name;
 String author;
 int userID;
-public int getRequested_id() {
-	return requestedID;
-}
-public void setRequested_id(int requested_id) {
-	this.requestedID = requested_id;
-}
-
 public int getRequestedID() {
 	return requestedID;
 }
@@ -50,5 +43,6 @@ public int getUserID() {
 public void setUserID(int userID) {
 	this.userID = userID;
 }
+
 
 }
