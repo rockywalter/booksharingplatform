@@ -27,7 +27,7 @@ public class RequestedBookService {
 
 	public void deleteReqBook(RequestedBook reqbook) {
 
-		reqbookrepo.deleteById(reqbook.getRequested_id());
+		reqbookrepo.deleteById(reqbook.getRequestedID());
 
 	}
 
