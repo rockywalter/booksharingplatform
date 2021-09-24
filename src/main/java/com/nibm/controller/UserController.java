@@ -61,8 +61,8 @@ public class UserController {
 	public ResponseEntity<Object> userLoginVerify(@RequestBody User user) {
 
 		User return_user = userservice.userVerify(user);
-
-		if (return_user == null) {
+		return_user.setResetcode("no");
+	if (return_user == null) {
 			JSONObject jobj = new JSONObject();
 			jobj.put("authentication", "Fail");
 			return new ResponseEntity<Object>(jobj.toString(), HttpStatus.NOT_FOUND);
