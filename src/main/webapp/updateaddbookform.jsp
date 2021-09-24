@@ -22,7 +22,7 @@
     <div class="row">
     
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class=" mt-5" src="/${booklist.get().image}" width="200px"><span class="font-weight-bold">${booklist.get().book_name}</span><span class="text-black-50"></span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class=" mt-5" src="/img/logo.png" width="200px"><span class="font-weight-bold">HUWAMARUWA</span><span class="text-black-50"></span><span> </span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
