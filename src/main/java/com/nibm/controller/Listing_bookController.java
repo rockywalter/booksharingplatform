@@ -46,7 +46,7 @@ public class Listing_bookController {
 
 	}
 
-	@DeleteMapping("/book")
+	@PostMapping("/deletebook")
 	public void deleteBook(@RequestBody Listing_book book) {
 		bookService.deleteBook(book);
 
