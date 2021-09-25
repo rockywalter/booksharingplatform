@@ -155,7 +155,7 @@ public class Listing_bookService {
 			if (book1.getE_book_file() != null) {
 				byte[] pdfdecodedBytes = null;
 				try {
-					pdfdecodedBytes = FileUtils.readFileToByteArray(new File(book1.getE_book_file()));
+					pdfdecodedBytes = FileUtils.readFileToByteArray(new File("src/main/resources/static/"+book1.getE_book_file()));
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -167,7 +167,7 @@ public class Listing_bookService {
 			byte[] fileContent = null;
 
 			try {
-				fileContent = FileUtils.readFileToByteArray(new File(book1.getImage()));
+				fileContent = FileUtils.readFileToByteArray(new File("src/main/resources/static/"+book1.getImage()));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
